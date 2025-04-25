@@ -7,7 +7,7 @@ import os
 
 # Load emotion detection model
 model_path = os.path.join(os.path.dirname(__file__), '../Models/my_emotion_detection_model.h5')
-model = load_model(model_path)
+model = load_model(model_path, compile=False)
 
 labels = ['happy', 'neutral', 'sad', 'surprise']
 
