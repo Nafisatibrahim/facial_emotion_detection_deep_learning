@@ -17,19 +17,22 @@ face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_fronta
 # Set page config
 st.set_page_config(page_title="Facial Emotion Detection", page_icon="😄", layout="centered")
 
-# Custom CSS for bluish theme
+# Custom CSS for light background + dark text
 st.markdown(
     """
     <style>
         .main {
             background-color: #f0f8ff;
         }
+        h1, h2, h3, h4, h5, h6, p, label, div {
+            color: #000000 !important;
+        }
         .stButton>button {
-            color: white;
-            background-color: #1e90ff;
+            color: white !important;
+            background-color: #1e90ff !important;
         }
         .stRadio > div {
-            background-color: #e6f2ff;
+            background-color: #e6f2ff !important;
             padding: 10px;
             border-radius: 10px;
         }
@@ -56,7 +59,7 @@ if input_type == "Take a Snapshot":
     photo = st.camera_input("Take a picture")
     if photo:
         if st.button("Retake"):
-            st.experimental_rerun()
+            st.rerun()
         image = Image.open(photo)
 elif input_type == "Upload Image":
     uploaded_file = st.file_uploader("Upload a face image", type=["jpg", "jpeg", "png"])
