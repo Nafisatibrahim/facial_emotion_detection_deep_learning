@@ -3,9 +3,12 @@ import numpy as np
 import cv2
 from PIL import Image
 from keras.models import load_model
+import os
 
 # Load emotion detection model
-model = load_model('../Models/my_emotion_detection_model.h5')
+model_path = os.path.join(os.path.dirname(__file__), '../Models/my_emotion_detection_model.h5')
+model = load_model(model_path)
+
 labels = ['happy', 'neutral', 'sad', 'surprise']
 
 # Load face detector
