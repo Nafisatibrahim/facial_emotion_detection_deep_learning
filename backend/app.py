@@ -21,38 +21,50 @@ st.set_page_config(page_title="Facial Emotion Detection", page_icon="😄", layo
 st.markdown(
     """
     <style>
-        /* Make page background dark */
+        /* Set full app background */
         .main {
             background-color: #0e1117;
         }
 
-        /* Set all text to white by default */
+        /* Make all general text white */
         h1, h2, h3, h4, h5, h6, p, label, div, span {
             color: white !important;
         }
 
-        /* EXCEPTION: Keep radio button labels black (on light background) */
-        .stRadio > div label {
-            color: black !important;
+        /* Radio container label (e.g., Choose input method:) */
+        .stRadio > label {
+            color: white !important;
+            font-weight: 500;
         }
 
-        /* Style buttons */
+        /* Radio options container */
+        .stRadio > div {
+            background-color: #1e1e1e !important;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Radio button labels */
+        .stRadio > div label {
+            color: white !important;
+        }
+
+        /* Style the file uploader label */
+        section[data-testid="stFileUploader"] label {
+            color: white !important;
+        }
+
+        /* Buttons */
         .stButton>button {
             background-color: #1e90ff !important;
             color: white !important;
             border-radius: 8px;
         }
-
-        /* Style radio box container */
-        .stRadio > div {
-            background-color: #e6f2ff !important;
-            padding: 10px;
-            border-radius: 10px;
-        }
     </style>
     """,
     unsafe_allow_html=True
 )
+
 
 # Sidebar with options
 st.sidebar.title("Settings")
