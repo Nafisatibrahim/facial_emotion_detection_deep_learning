@@ -21,16 +21,29 @@ st.set_page_config(page_title="Facial Emotion Detection", page_icon="😄", layo
 st.markdown(
     """
     <style>
+        /* Make page background dark */
         .main {
-            background-color: #f0f8ff;
+            background-color: #0e1117;
         }
-        h1, h2, h3, h4, h5, h6, p, label, div {
-            color: #000000 !important;
-        }
-        .stButton>button {
+
+        /* Set all text to white by default */
+        h1, h2, h3, h4, h5, h6, p, label, div, span {
             color: white !important;
-            background-color: #1e90ff !important;
         }
+
+        /* EXCEPTION: Keep radio button labels black (on light background) */
+        .stRadio > div label {
+            color: black !important;
+        }
+
+        /* Style buttons */
+        .stButton>button {
+            background-color: #1e90ff !important;
+            color: white !important;
+            border-radius: 8px;
+        }
+
+        /* Style radio box container */
         .stRadio > div {
             background-color: #e6f2ff !important;
             padding: 10px;
